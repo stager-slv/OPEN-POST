@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NEW USERS EJS </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app-background" style="height : 100vh; padding : 25px;">
+
+    <% if( validity!="true" ) { %>
+    <div class="red-text soft-corner center-text white-background padding margin-auto border-min-width">
+         Invalid Input Values Entered !!
+    </div>
+    <% } %>
+
+    <br />
+
+    <form method="post" action="/new_post">
+        <fieldset  class="soft-corner translucent padding center-text margin-auto" style="width : 65vw">
+            <legend class="padding azure-text normal-background input-corner"> 
+                <b> NEW USER DETAILS </b>
+            </legend>
+
+            <br>
+
+            <input name="user_name" type="text" placeholder="Enter user name..." class="padding input-corner"> 
+            <br /> <br />
+
+            <input name="pass_word" type="password" placeholder="Enter password..." class="padding input-corner"> 
+            <br /> <br />
+
+            <textarea name="post_desc" rows="5" cols="25" class="padding input-corner">Enter user description...</textarea>
+
+            <br /> <br />
+
+            <button type="submit" class="azure-text button-corner button-1-background padding"> 
+                <b> ADD POST </b>
+            </button>
+
+            <br />
+
+        </fieldset>
+    </form>
+
+</body>
+</html>

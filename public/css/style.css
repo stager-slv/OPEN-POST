@@ -1,0 +1,129 @@
+.app-background{
+    background-image : linear-gradient(20deg,darkblue,purple,maroon) 
+}
+
+.margin-auto{
+    margin : auto;
+}
+
+.red-text{
+    color  : red;
+}
+
+.yellow-text{
+    color : rgb(255, 187, 0);
+}
+
+.skyblue-text{
+    color : rgb(39, 182, 238);
+}
+
+.azure-text{
+    color : azure;
+}
+
+.grey-text {
+    color : grey;
+}
+
+.darkcyan-text{
+    color : rgb(9, 93, 123);
+}
+
+.darkblue-text{
+    color : darkblue;
+}
+
+.soft-corner{
+    border-radius : 7px;
+}
+
+.messagein-corner{
+    border-radius : 2px 20px 2px 20px;
+}
+
+.button-corner {
+    border-radius : 20px;
+}
+
+.input-corner {
+    border-radius : 15px;
+}
+
+.translucent{
+    background-color: rgba(240, 248, 255, 0.193);
+}
+
+.padding {
+    padding : 10px;
+}
+
+.margin{
+    margin : 6px;
+}
+
+.center-text {
+    text-align : center;
+}
+
+.left-text {
+    text-align : left;
+}
+
+.message-background {
+    background-color: aliceblue;
+}
+
+.messagein-background {
+    background-color: rgb(167, 221, 255);
+}
+
+.button-1-background {
+    background-color: green;
+}
+
+.button-2-background {
+    background-color: rgb(12, 85, 144);
+}
+
+.button-3-background {
+    background-color: rgb(133, 10, 32);
+}
+
+.normal-background {
+    background-color: darkblue;
+}
+
+.white-background {
+    background-color: rgba(240, 248, 255, 0.923);
+}
+
+.low-font{
+    font-size : 12px;
+}
+
+.medium-font{
+    font-size: 20px;
+}
+
+.flexer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.columner{
+    flex-direction: column;
+}
+
+.column-left-align{
+    align-items :start;
+}
+
+.message-min-width{
+    min-width: 400px;
+}
+
+.border-min-width{
+    min-width: 450px;
+}

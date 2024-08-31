@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> USERS EJS </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app-background" style="height : 100vh; padding : 25px; min-width: 425px;">
+
+    <div class="soft-corner translucent padding margin-auto flexer columner  column-left-align border-min-width">
+          <form method="get" action="/posts/new_post/true">
+              <button class="azure-text button-corner button-1-background padding"> 
+                <b> ADD POST </b> 
+              </button>
+          </form>
+    </div>
+
+    <br /> 
+
+    <div class="soft-corner translucent padding margin-auto flexer columner  column-left-align border-min-width">
+        <% for( let user of usersArray ) { %>
+            <div class="messagein-corner message-background padding left-text margin message-min-width" >
+                <div class="grey-text low-font"> 
+                    Posted On : <%= user.created_time.toString().split(" ").slice(4,5).join(" ") %> ,  <%= user.created_time.toString().split(" ").slice(1,4).join(" ")  %>
+                </div>
+
+                <hr />
+
+                <div class="darkblue-text margin medium-font flexer" style=" justify-content: space-between; flex-wrap: wrap;"> 
+                    <div>
+                        <b> @<%= user.user_name %> </b>
+                    </div>
+                    <div class="flexer">
+                        <form method="get" action="/verify/editable_user/<%=user["_id"]%>/true">
+                            <button class="azure-text button-corner button-2-background padding"> 
+                              <b> EDIT POST </b> 
+                            </button>
+                        </form>
+
+                        &nbsp; &nbsp; 
+
+                        <form method="get" action="/verify/deletable_user/<%=user["_id"]%>/true">
+                            <button class="azure-text button-corner button-3-background padding"> 
+                              <b> DELETE POST </b> 
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+    
+                <div class="darkcyan-text messagein-background padding messagein-corner"> 
+                    <b> <%= user.post_desc %> </b>
+                </div>
+
+                <hr />
+
+                <div class="grey-text low-font"> 
+                    <% if( user.edited_time!=null ){ %>
+                        Last Edited On : <%= user.edited_time.toString().split(" ").slice(4,5).join(" ") %> ,  <%= user.edited_time.toString().split(" ").slice(1,4).join(" ")  %>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

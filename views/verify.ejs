@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> VERIFY USERS EJS </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app-background" style="height : 100vh; padding : 25px;">
+
+    <% if( validity!="true" ) { %>
+        <div class="red-text soft-corner center-text white-background padding margin-auto border-min-width">
+            Invalid password entered !!
+        </div>
+    <% } %>
+
+    <form method="post" action="/posts/<%=operation%>/<%=id%>/<%=validity%>">
+        <fieldset  class="soft-corner white-background padding center-text margin-auto" style="width : 65vw;">
+            <legend class="padding azure-text normal-background input-corner"> 
+                <b> AUTHENTICATION </b>
+            </legend>
+
+            <br>
+
+            <% if( operation=="deletable_user" ) { %>
+                <h3 class="red-text"> Are you sure want to delete post ? </h3>
+                <a href="/posts">
+                    <button type="button" class="azure-text button-corner normal-background padding"> 
+                        <b> CANCEL </b>
+                    </button>
+                </a>
+                <h3 class="darkblue-text"> If yes, Enter your password and click on delete </h3>
+            <% } %>
+
+            <input name="pass_word" type="password" placeholder="Enter your password..." class="padding input-corner"> 
+            <br /> <br />
+
+            <% if( operation=="editable_user" ) { %>
+                <button type="submit" class="azure-text button-corner button-2-background padding"> 
+                    <b> &nbsp; &nbsp; EDIT &nbsp; &nbsp; </b>
+                </button>
+            <% } %>
+
+            <% if( operation=="deletable_user" ) { %>
+                <button type="submit" class="azure-text button-corner button-3-background padding"> 
+                    <b> DELETE </b>
+                </button>
+            <% } %>
+
+            <br />
+        </fieldset>
+    </form>
+</body>
+</html>
